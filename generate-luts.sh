@@ -5,7 +5,8 @@ IN="2-strip-process|60s|60s_faded|60s_faded_alt|action_magenta_01|action_red_01|
 for i in $(echo $IN | tr "|" "\n")
 do
     echo $i
-    gmic ./test.jpg map_clut $i output ./previews/$i-preview.jpg
-    gmic ./neutral-hypercube.png map_clut $i output ./spark-hypercube-luts/$i-hypercube-lut.png
+    gmic ./hald_8.jpg map_clut $i output ./gmic-hald-luts/$i-hald-lut.png
+    #gmic ./test.jpg map_clut $i output ./previews/$i-preview.jpg
+    # gmic ./neutral-hypercube.png map_clut $i output ./spark-hypercube-luts/$i-hypercube-lut.png
 done;
 

@@ -8,6 +8,7 @@ mkdir -p output/previews
 mkdir -p output/spark-hypercube-luts
 mkdir -p output/gmic-hald-luts
 mkdir -p output/snap-cube16-luts
+mkdir -p output/cube
 
 for i in $(echo $IN | tr "|" "\n")
 do
@@ -17,5 +18,6 @@ do
     gmic ./neutral-luts/neutral-cube16.png map_clut $i output ./output/snap-cube16-luts/$i-cube16-lut.png
     gmic ./neutral-luts/neutral-cube32.png map_clut $i output ./output/spark-cube32-luts/$i-cube32-lut.png
     gmic ./neutral-luts/neutral-hypercube.png map_clut $i output ./output/spark-hypercube-luts/$i-hypercube-lut.png
+    gmic clut $i,32 output_cube ./output/cube/$i.cube
 done;
 
